@@ -1,0 +1,114 @@
+Configuration	BMS_4S
+STM32CubeMX 	5.0.1
+Date	07/31/2019
+MCU	STM32F030K6Tx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+ADC	IN0	ADC_IN0	PA0
+ADC	IN4	ADC_IN4	PA4
+ADC	IN5	ADC_IN5	PA5
+ADC	IN6	ADC_IN6	PA6
+ADC	IN7	ADC_IN7	PA7
+RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	PF0-OSC_IN
+RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	PF1-OSC_OUT
+SYS	Serial_Wire	SYS_SWCLK	PA14
+SYS	Serial_Wire	SYS_SWDIO	PA13
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+USART1	Asynchronous	USART1_RX	PA10
+USART1	Asynchronous	USART1_TX	PA9
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+2	PF0-OSC_IN	RCC_OSC_IN	
+3	PF1-OSC_OUT	RCC_OSC_OUT	
+6	PA0	ADC_IN0	ADC_Temper
+7	PA1	GPIO_Output	Gate
+8	PA2	GPIO_Output	Balance4
+9	PA3	GPIO_Output	Balance3
+10	PA4	ADC_IN4	ADC_U1
+11	PA5	ADC_IN5	ADC_U2
+12	PA6	ADC_IN6	ADC_U3
+13	PA7	ADC_IN7	ADC_U4
+14	PB0	GPIO_Output	Balance2
+15	PB1	GPIO_Output	Balance1
+18	PA8	GPIO_Output	ChargeOn
+19	PA9	USART1_TX	
+20	PA10	USART1_RX	
+23	PA13	SYS_SWDIO	
+24	PA14	SYS_SWCLK	
+25	PA15	GPIO_Output	Motor
+26	PB3	GPIO_Output	Led20
+27	PB4	GPIO_Output	Led40
+28	PB5	GPIO_Output	Led60
+29	PB6	GPIO_Output	Led80
+30	PB7	GPIO_Output	Led100
+PERIPHERALS	MODES	FUNCTIONS	PINS
+ADC	IN0	ADC_IN0	PA0
+ADC	IN4	ADC_IN4	PA4
+ADC	IN5	ADC_IN5	PA5
+ADC	IN6	ADC_IN6	PA6
+ADC	IN7	ADC_IN7	PA7
+RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	PF0-OSC_IN
+RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	PF1-OSC_OUT
+SYS	Serial_Wire	SYS_SWCLK	PA14
+SYS	Serial_Wire	SYS_SWDIO	PA13
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+USART1	Asynchronous	USART1_RX	PA10
+USART1	Asynchronous	USART1_TX	PA9
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+2	PF0-OSC_IN	RCC_OSC_IN	
+3	PF1-OSC_OUT	RCC_OSC_OUT	
+6	PA0	ADC_IN0	ADC_Temper
+7	PA1	GPIO_Output	Gate
+8	PA2	GPIO_Output	Balance4
+9	PA3	GPIO_Output	Balance3
+10	PA4	ADC_IN4	ADC_U1
+11	PA5	ADC_IN5	ADC_U2
+12	PA6	ADC_IN6	ADC_U3
+13	PA7	ADC_IN7	ADC_U4
+14	PB0	GPIO_Output	Balance2
+15	PB1	GPIO_Output	Balance1
+18	PA8	GPIO_Output	ChargeOn
+19	PA9	USART1_TX	
+20	PA10	USART1_RX	
+23	PA13	SYS_SWDIO	
+24	PA14	SYS_SWCLK	
+25	PA15	GPIO_Output	Motor
+26	PB3	GPIO_Output	Led20
+27	PB4	GPIO_Output	Led40
+28	PB5	GPIO_Output	Led60
+29	PB6	GPIO_Output	Led80
+30	PB7	GPIO_Output	Led100
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : BMS_4S
+Project Folder : D:\_STM32_PROJECTS\BMS_4S\BMS_4S_v1.0
+Toolchain / IDE : Other Toolchains (GPDSC)
+Firmware Package Name and Version : STM32Cube FW_F0 V1.9.0
+
+
+Code Generation Settings : 
+STM32Cube Firmware Library Package : Copy all used libraries into the project folder
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : Yes
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : 
+
+
+
+
+

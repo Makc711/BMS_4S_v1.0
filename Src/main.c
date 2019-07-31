@@ -133,6 +133,7 @@ int main(void)
 void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  // ReSharper disable once CppInitializedValueIsAlwaysRewritten
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
