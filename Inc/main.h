@@ -74,7 +74,13 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+#ifndef __cplusplus
+typedef enum 
+{
+	false = 0, 
+	true  = !false
+} bool;
+#endif
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
@@ -113,7 +119,7 @@ void Error_Handler(void);
 #define Led100_Pin GPIO_PIN_7
 #define Led100_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
-
+#define COUNTOF(__BUFFER__)   (sizeof(__BUFFER__) / sizeof(*(__BUFFER__)))
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
