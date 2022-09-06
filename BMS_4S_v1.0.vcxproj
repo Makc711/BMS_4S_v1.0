@@ -75,9 +75,15 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <ItemGroup>
+    <ClCompile Include="Src\batteryStatus.c" />
+    <ClCompile Include="Src\cell.c" />
+    <ClCompile Include="Src\chargeStatus.c" />
+    <ClCompile Include="Src\discreteDevices.c" />
     <ClCompile Include="Src\gpio.c" />
     <ClCompile Include="Src\adc.c" />
     <ClCompile Include="Src\memory.c" />
+    <ClCompile Include="Src\safetyStatus.c" />
+    <ClCompile Include="Src\statusRegisters.c" />
     <ClCompile Include="Src\usart.c" />
     <ClCompile Include="Src\stm32f0xx_it.c" />
     <ClCompile Include="Src\stm32f0xx_hal_msp.c" />
@@ -103,9 +109,15 @@
     <ClCompile Include="Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_gpio.c" />
     <None Include="stm32.props" />
     <ClCompile Include="$(BSP_ROOT)\STM32F0xxxx\StartupFiles\startup_stm32f030x6.c" />
+    <ClInclude Include="Inc\batteryStatus.h" />
+    <ClInclude Include="Inc\cell.h" />
+    <ClInclude Include="Inc\chargeStatus.h" />
+    <ClInclude Include="Inc\discreteDevices.h" />
     <ClInclude Include="Inc\gpio.h" />
     <ClInclude Include="Inc\adc.h" />
     <ClInclude Include="Inc\memory.h" />
+    <ClInclude Include="Inc\safetyStatus.h" />
+    <ClInclude Include="Inc\statusRegisters.h" />
     <ClInclude Include="Inc\usart.h" />
     <ClInclude Include="Inc\stm32f0xx_it.h" />
     <ClInclude Include="Inc\stm32f0xx_hal_conf.h" />
@@ -138,5 +150,9 @@
     <None Include="BMS_4S_v1.0-Debug.vgdbsettings" />
     <None Include="BMS_4S_v1.0-Release.vgdbsettings" />
     <None Include="stm32.xml" />
+    <ClCompile Include="Src\dma.c" />
+    <ClInclude Include="Inc\dma.h" />
+    <ClCompile Include="Src\tim.c" />
+    <ClInclude Include="Inc\tim.h" />
   </ItemGroup>
 </Project>

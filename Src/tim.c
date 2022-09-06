@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * File Name          : ADC.h
+  * File Name          : TIM.c
   * Description        : This file provides code for the configuration
-  *                      of the ADC instances.
+  *                      of the TIM instances.
   ******************************************************************************
   ** This notice applies to any and all portions of this file
   * that are not between comment pairs USER CODE BEGIN and
@@ -36,55 +36,97 @@
   *
   ******************************************************************************
   */
-/* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __adc_H
-#define __adc_H
-#ifdef __cplusplus
- extern "C" {
-#endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
+#include "tim.h"
 
-/* USER CODE BEGIN Includes */
-	 // SamplingTime = 71.5 => Tadc=0.09 sec * 5 chennels ADC
-	 // SamplingTime = 71.5 => Tadc=0.5 sec * 1 chennel ADC
-	 // SamplingTime = 239.5 => Tadc=0.3 sec * 5 chennels ADC
-	 // SamplingTime = 239.5 => Tadc=1.5 sec * 1 chennel ADC
-/* USER CODE END Includes */
+/* USER CODE BEGIN 0 */
+/* ###########################################################################*/
+/* Includes ------------------------------------------------------------------*/
+#include "adc.h"
+#include "cell.h"
+/* USER CODE END 0 */
 
-extern ADC_HandleTypeDef hadc;
+TIM_HandleTypeDef htim3;
 
-/* USER CODE BEGIN Private defines */
-typedef enum ADCIndex
+/* TIM3 init function */
+void MX_TIM3_Init(void)
 {
-	ADC_Temper,   // Must go in order (ADC_Temper = ADC_IN0, ADC_U1 = ADC_IN4, ADC_U2 = ADC_IN5, ADC_U3 = ADC_IN6, ADC_U4 = ADC_IN7)!
-	ADC_U1,
-	ADC_U2,
-	ADC_U3,
-	ADC_U4
-} ADCIndex;
-/* USER CODE END Private defines */
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
 
-void MX_ADC_Init(void);
+  htim3.Instance = TIM3;
+  htim3.Init.Prescaler = 4799;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 9999;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
 
-/* USER CODE BEGIN Prototypes */
-void startADCConversion();
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc);
-uint16_t getADCData(const ADCIndex index);
-/* USER CODE END Prototypes */
-
-#ifdef __cplusplus
 }
-#endif
-#endif /*__ adc_H */
 
-/**
-  * @}
-  */
+void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
+{
 
-/**
-  * @}
-  */
+  if(tim_baseHandle->Instance==TIM3)
+  {
+  /* USER CODE BEGIN TIM3_MspInit 0 */
+
+  /* USER CODE END TIM3_MspInit 0 */
+    /* TIM3 clock enable */
+    __HAL_RCC_TIM3_CLK_ENABLE();
+
+    /* TIM3 interrupt Init */
+    HAL_NVIC_SetPriority(TIM3_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(TIM3_IRQn);
+  /* USER CODE BEGIN TIM3_MspInit 1 */
+
+  /* USER CODE END TIM3_MspInit 1 */
+  }
+}
+
+void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
+{
+
+  if(tim_baseHandle->Instance==TIM3)
+  {
+  /* USER CODE BEGIN TIM3_MspDeInit 0 */
+
+  /* USER CODE END TIM3_MspDeInit 0 */
+    /* Peripheral clock disable */
+    __HAL_RCC_TIM3_CLK_DISABLE();
+
+    /* TIM3 interrupt Deinit */
+    HAL_NVIC_DisableIRQ(TIM3_IRQn);
+  /* USER CODE BEGIN TIM3_MspDeInit 1 */
+
+  /* USER CODE END TIM3_MspDeInit 1 */
+  }
+} 
+
+/* USER CODE BEGIN 1 */
+uint8_t t = 0;
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) // T = 1 s
+{
+	if (htim == &htim3)
+	{
+		decrementTimers();
+	}
+}
+/* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

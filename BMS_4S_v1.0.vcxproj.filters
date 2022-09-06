@@ -93,6 +93,9 @@
     <Filter Include="VisualGDB settings">
       <UniqueIdentifier>{f86e49d8-e413-4a7c-8efc-d8ad13b8aa62}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source files\CORE">
+      <UniqueIdentifier>{43129a15-58af-4907-aca9-47aea81caac8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\gpio.c">
@@ -281,9 +284,57 @@
     <ClCompile Include="Src\memory.c">
       <Filter>Source files</Filter>
     </ClCompile>
+    <ClCompile Include="Src\dma.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClInclude Include="Inc\dma.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClCompile Include="Src\tim.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClInclude Include="Inc\tim.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClCompile Include="Src\cell.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\discreteDevices.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\safetyStatus.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\chargeStatus.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\batteryStatus.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\statusRegisters.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inc\memory.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\discreteDevices.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\cell.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\safetyStatus.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\chargeStatus.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\batteryStatus.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\statusRegisters.h">
       <Filter>Header files</Filter>
     </ClInclude>
   </ItemGroup>

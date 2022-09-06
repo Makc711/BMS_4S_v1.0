@@ -40,7 +40,7 @@
     <AllDependencies>
       <ProjectDependency>
         <RelativePath>BMS_4S.gpdsc</RelativePath>
-        <Timestamp>132090246983666003</Timestamp>
+        <Timestamp>132441838236800000</Timestamp>
       </ProjectDependency>
     </AllDependencies>
     <RootDirectory>
@@ -160,10 +160,10 @@
                   <RelativePath>Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h</RelativePath>
                 </VirtualFileSnapshot>
                 <VirtualFileSnapshot>
-                  <RelativePath>Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim.c</RelativePath>
+                  <RelativePath>Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h</RelativePath>
                 </VirtualFileSnapshot>
                 <VirtualFileSnapshot>
-                  <RelativePath>Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h</RelativePath>
+                  <RelativePath>Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim.c</RelativePath>
                 </VirtualFileSnapshot>
                 <VirtualFileSnapshot>
                   <RelativePath>Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim_ex.c</RelativePath>
@@ -261,6 +261,12 @@
           <RelativePath>Inc\adc.h</RelativePath>
         </VirtualFileSnapshot>
         <VirtualFileSnapshot>
+          <RelativePath>Inc\dma.h</RelativePath>
+        </VirtualFileSnapshot>
+        <VirtualFileSnapshot>
+          <RelativePath>Inc\tim.h</RelativePath>
+        </VirtualFileSnapshot>
+        <VirtualFileSnapshot>
           <RelativePath>Inc\usart.h</RelativePath>
         </VirtualFileSnapshot>
         <VirtualFileSnapshot>
@@ -277,6 +283,12 @@
         </VirtualFileSnapshot>
         <VirtualFileSnapshot>
           <RelativePath>Src\adc.c</RelativePath>
+        </VirtualFileSnapshot>
+        <VirtualFileSnapshot>
+          <RelativePath>Src\dma.c</RelativePath>
+        </VirtualFileSnapshot>
+        <VirtualFileSnapshot>
+          <RelativePath>Src\tim.c</RelativePath>
         </VirtualFileSnapshot>
         <VirtualFileSnapshot>
           <RelativePath>Src\usart.c</RelativePath>
